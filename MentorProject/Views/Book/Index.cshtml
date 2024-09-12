@@ -1,0 +1,40 @@
+﻿@model List<BookModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="book-datatable" class="table table-striped table-hover">
+    <thead style="background-color: #7613ec; color: white;">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">In Stock</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var books in Model)
+        {
+            <tr>
+                <td>@books.Id</td>
+                <td>@books.BookName</td>
+                <td>@books.Price</td>
+                <td>@books.InStock</td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controller="Book" asp-action="Edit"
+                       asp-route-id="@books.Id">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Book" asp-action="Delete"
+                       asp-route-id="@books.Id">Delete</a>
+                    <a class="btn btn-info btn-sm" asp-controller="Order" asp-action="AddOrder"
+                       asp-route-id="@books.Id">Buy</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    <script src="~/js/bookTable.js"></script>
+}

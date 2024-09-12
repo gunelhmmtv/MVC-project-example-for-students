@@ -1,0 +1,24 @@
+﻿.*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.navbar-nav{
+    gap : 10px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color:#f1faee;
+    background: #7613ec
+
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+     color: darkslateblue;
+     background: #a683ea
+ }
+    .navbar-nav .nav-item .active {
+        color: darkslateblue;
+        background: #a683ea
+    }

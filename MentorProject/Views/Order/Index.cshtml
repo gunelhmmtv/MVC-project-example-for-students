@@ -1,0 +1,32 @@
+﻿@model List<Order>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="order-datatable" class="table table-striped table-hover">
+    <thead style="background-color: #7613ec; color: white;">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Order Number</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var orders in Model)
+        {
+            <tr>
+                <td>@orders.Id</td>
+                <td>@orders.OrderNumber</td>
+                <td>@orders.OrderDate</td>
+                <td>@orders.OrderTotalPrice</td>
+            
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    <script src="~/js/orderTable.js"></script>
+}

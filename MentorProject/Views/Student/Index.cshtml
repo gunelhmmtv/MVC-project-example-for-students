@@ -1,0 +1,30 @@
+﻿@model List<BookModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">InStock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach( var books in Model)
+        {
+            <tr>
+                <td>@books.Id</td>
+                <td>@books.BookName</td>
+                <td>@books.Price</td>
+                <td>@books.InStock</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+

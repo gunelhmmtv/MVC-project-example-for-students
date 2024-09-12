@@ -1,0 +1,32 @@
+﻿@model Order
+
+
+<div class="card shadow mt-4">
+    <div class="card-header">Add Order</div>
+    <div class="card-body">
+        <form asp-action="AddOrder" asp-controller="Order" method="post">
+            <div class="mb-3">
+                <input type="hidden" class="form-control" id="order-id" asp-for="Id" />
+            </div>
+            <div class="mb-3">
+                <label for="orderNumber" class="form-label">Order Number</label>
+                <input type="text" class="form-control" asp-for="OrderNumber" id="orderNumber" placeholder="Enter order number">
+            </div>
+            <div class="mb-3">
+                <label for="orderDate" class="form-label">Order Date</label>
+                <input type="date" class="form-control" asp-for="OrderDate" id="orderDate">
+            </div>
+            <div class="mb-3">
+                <label for="totalPrice" class="form-label">Total Price</label>
+                <input type="number" class="form-control" asp-for="OrderTotalPrice" id="totalPrice" placeholder="Enter total price">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary w-25" id="add-btn" style="background-color: #7613ec; border-color: #7613ec;">Add Order</button>
+            </div>
+        </form><a href="c:\users\gunel\desktop\gmentor\mentorproject\mentorproject\views\order\addorder.cshtml">c:\users\gunel\desktop\gmentor\mentorproject\mentorproject\views\order\addorder.cshtml</a>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/order.js"></script>
+}
